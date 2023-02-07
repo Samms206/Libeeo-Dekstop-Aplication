@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b7aa74cd-a66f-425b-9bfd-d463a22fedc9">
+	<property name="ireport.zoom" value="1.4641000000000015"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select*from history]]>
+	</queryString>
+	<field name="idhistory" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kelas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jmlhbuku" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tglPinjam" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tglKmbl" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="62" forecolor="#27333C" uuid="9b5552cb-39c0-4404-abfa-db521f2aeab7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Peminjaman]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="36" y="-1" width="100" height="20" uuid="3e7ab6bc-9a8d-47ef-99a0-a2e770ad8aac"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Petugas : ]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="353" y="0" width="155" height="20" uuid="804a8a72-25e4-4d44-b2c9-8e5b7e799fda"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="128" y="0" width="61" height="20" uuid="84a9c8ef-22fc-48f5-9626-fd2085c99bd9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="0" width="94" height="20" uuid="66f28f85-44c1-42d9-bbb9-8dbf823ef2af"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="323" y="0" width="96" height="20" uuid="9aab8937-107d-4673-bbe6-6ee738f6d90f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tgl Pinjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="0" width="80" height="20" uuid="9e254ae0-d316-4b1c-af64-8729920807f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="0" width="90" height="20" uuid="9239a694-cb38-4feb-a8d5-3597601bc8bc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tgl Kembali]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="269" y="0" width="54" height="20" uuid="f42e146b-0c89-4abe-b839-d3c7ef497cdb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<line>
+				<reportElement x="34" y="20" width="476" height="1" uuid="7b4adb04-2ea9-42a9-be82-1820f3b0a504"/>
+			</line>
+			<line>
+				<reportElement x="34" y="0" width="476" height="1" uuid="7a8bc2e0-8121-4bf7-b8c2-b798f639a5fb"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="269" y="2" width="54" height="20" uuid="4c365e6a-1d9e-4f69-a733-ea736bf4bed3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{jmlhbuku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="34" y="2" width="94" height="20" uuid="8be5a7a6-841b-4135-a687-39b02b528142"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="199" y="2" width="70" height="20" uuid="d590b920-3eda-4c43-bf2a-ca89c62a60e0"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="2" width="61" height="20" uuid="65b5eb54-b00b-454e-bd8f-995be8a3ff14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{kelas}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="126" y="4" width="1" height="17" uuid="04d75992-f1ba-4a85-9efa-c68906e4a429"/>
+			</line>
+			<line>
+				<reportElement x="189" y="4" width="1" height="17" uuid="2d6df61a-2649-4a62-b7bc-d8f80886c3f2"/>
+			</line>
+			<line>
+				<reportElement x="269" y="4" width="1" height="17" uuid="7c73fb47-062a-4387-ae8b-0785eee9cdfb"/>
+			</line>
+			<line>
+				<reportElement x="323" y="4" width="1" height="17" uuid="70c4d090-e46c-4479-ae75-1558d38a19d8"/>
+			</line>
+			<line>
+				<reportElement x="419" y="5" width="1" height="17" uuid="b91f96a5-8cd5-4f30-9777-40ec7d8ef14a"/>
+			</line>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="324" y="1" width="95" height="20" uuid="671d63d6-80e4-46ab-a17e-d7a46720a55b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tglPinjam}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="420" y="2" width="88" height="20" uuid="b16525d0-38cf-450d-a5cf-b48537adb2cb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tglKmbl}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
